@@ -4,9 +4,9 @@ from textblob import TextBlob
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load the .jsonl file
-df = pd.read_csv('D:/Msc/Final Project/HC3 corpus/finance.csv')
-corpus = "finance"
+# Load the .csv file
+df = pd.read_csv('D:/Msc/Final Project/HC3 corpus/medicine.csv')
+corpus = "medicine "
 
 output_dir = 'D:/Msc/Final Project/Result Diagrams/TextBlob/HC3'
 # Ensure the output directory exists
@@ -99,17 +99,17 @@ for patch in violin_chatgpt.collections:
     patch.set_alpha(0.6)
 
 # Box plots
-box_human = sns.boxplot(data=df, y='mean_human_subjectivity', ax=axes[1, 0], color="blue")
-axes[1, 0].set_title(corpus + ': Box Plot of Human Subjectivity')
-axes[1, 0].set_ylim(0, 1)
+box_human = sns.boxplot(data=df, y='mean_human_polarity', ax=axes[1, 0], color="blue")
+axes[1, 0].set_title(corpus + ': Box Plot of Human Polarity')
+axes[1, 0].set_ylim(-1, 1)
 for patch in box_human.patches:
     patch.set_alpha(0.6)
 for line in axes[1, 0].lines:
     line.set_alpha(0.6)
 
-box_chatgpt = sns.boxplot(data=df, y='mean_chatgpt_subjectivity', ax=axes[1, 1], color="red")
-axes[1, 1].set_title(corpus + ': Box Plot of ChatGPT Subjectivity')
-axes[1, 1].set_ylim(0, 1)
+box_chatgpt = sns.boxplot(data=df, y='mean_chatgpt_polarity', ax=axes[1, 1], color="red")
+axes[1, 1].set_title(corpus + ': Box Plot of ChatGPT Polarity')
+axes[1, 1].set_ylim(-1, 1)
 for patch in box_chatgpt.patches:
     patch.set_alpha(0.6)
 for line in axes[1, 1].lines:

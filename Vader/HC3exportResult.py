@@ -3,7 +3,8 @@ import pandas as pd
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
 
-# This code exports a csv file the corpus with the sentiment scores
+# This code exports a csv file of the corpus with the sentiment scores
+# to be able to access the content and sort the data by the scores in Excel
 
 nltk.download('vader_lexicon')
 

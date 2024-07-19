@@ -26,8 +26,8 @@ def analyze_sentiment(answers):
     return []
 
 
-df['human_sentiments'] = df['human_answers_processed'].apply(analyze_sentiment)
-df['chatgpt_sentiments'] = df['chatgpt_answers_processed'].apply(analyze_sentiment)
+df['human_sentiments'] = df['human_answers'].apply(analyze_sentiment)
+df['chatgpt_sentiments'] = df['chatgpt_answers'].apply(analyze_sentiment)
 
 def mean_compound(sentiments):
     if sentiments:

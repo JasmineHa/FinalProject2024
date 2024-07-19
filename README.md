@@ -16,3 +16,4 @@ All the DiagramGenerator files run sentiment analysis on the corpus, and generat
 
 3.violin plot
 
+and exports those diagram to output directory with proper names.
